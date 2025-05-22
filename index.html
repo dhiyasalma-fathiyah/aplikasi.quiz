@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interaktif - Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header aplikasi -->
+        <header class="header">
+            <h1>Quiz Interaktif</h1>
+            <p>Uji pengetahuan Anda dengan berbagai pertanyaan menarik!</p>
+        </header>
+
+        <!-- Menu utama -->
+        <div id="menu" class="menu">
+            <h2>Selamat Datang bener</h2>
+            <div class="menu-buttons">
+                <button id="startQuiz" class="btn btn-primary">Mulai Quiz</button>
+                <button id="showHistory" class="btn btn-secondary">Lihat Riwayat</button>
+                <button id="clearHistory" class="btn btn-danger">Hapus Riwayat</button>
+            </div>
+
+            <!-- Pengaturan kategori -->
+            <div class="settings">
+                <label for="category">Pilih Kategori:</label>
+                <select id="category">
+                    <option value="">Semua Kategori</option>
+                    <option value="9">Pengetahuan Umum</option>
+                    <option value="21">Olahraga</option>
+                    <option value="23">Sejarah</option>
+                    <option value="22">Geografi</option>
+                </select>
+
+                <label for="difficulty">Tingkat Kesulitan:</label>
+                <select id="difficulty">
+                    <option value="">Campuran</option>
+                    <option value="easy">Mudah</option>
+                    <option value="medium">Sedang</option>
+                    <option value="hard">Sulit</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Area quiz -->
+        <div id="quizArea" class="quiz-area hidden">
+            <div class="quiz-header">
+                <span id="questionNumber">Pertanyaan 1 dari 10</span>
+                <span id="score">Skor: 0</span>
+            </div>
+
+            <div id="loadingQuestions" class="loading">
+                <div class="spinner"></div>
+                <p>Mengambil pertanyaan...</p>
+            </div>
+
+            <div id="questionContainer" class="question-container hidden">
+                <h3 id="questionText">Pertanyaan akan muncul di sini</h3>
+                <div id="answersContainer" class="answers-container">
+                    <!-- Jawaban akan diisi oleh JavaScript -->
+                </div>
+                <div class="quiz-controls">
+                    <button id="nextQuestion" class="btn btn-primary hidden">Pertanyaan Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hasil quiz -->
+        <div id="resultArea" class="result-area hidden">
+            <h2>Quiz Selesai!</h2>
+            <div id="finalScore" class="final-score">
+                <h3>Skor Akhir: <span id="finalScoreValue">0</span>/10</h3>
+                <p id="scoreMessage">Pesan akan muncul di sini</p>
+            </div>
+            <div class="result-buttons">
+                <button id="playAgain" class="btn btn-primary">Main Lagi</button>
+                <button id="backToMenu" class="btn btn-secondary">Kembali ke Menu</button>
+            </div>
+        </div>
+
+        <!-- Riwayat quiz -->
+        <div id="historyArea" class="history-area hidden">
+            <h2>Riwayat Quiz</h2>
+            <div id="historyContainer">
+            </div>
+            <button id="backFromHistory" class="btn btn-secondary">Kembali ke Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
